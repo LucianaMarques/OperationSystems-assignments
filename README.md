@@ -24,3 +24,14 @@ root:/$ su student
 student:/$ ps ax
 student:/$ alias
 student:/$ gdb
+
+5) Use busybox
+cd initramfs
+initramfs$ vim cmd_default.sh
+(erase -S -s)
+
+build docker again
+
+Run as:
+1$ docker run -ti --rm -v "$PWD/linux":/home/student/src/linux -v "$PWD/../3/initramfs":/home/student/src/initramfs tiagoshibata/pcs3746
+
